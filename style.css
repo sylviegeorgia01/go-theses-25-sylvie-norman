@@ -7,18 +7,15 @@ html {
     scroll-padding-top: 10%;
 }
 body {
-    background-color: rgb(255, 255, 255);
+    position: relative;
+    background: url(images/protest.jpg);
+    background-attachment: fixed;
+    background-size: cover;
     font-family: Poppins, sans-serif;
     font-weight: 400;
     font-size: medium;
     padding: 0;
     margin: 0;
-
-    /* 
-    position:relative;
-    width: min(100%, 1440px);
-    margin-inline: auto; 
-    */
 
     display: flex; 
     flex-direction: column; 
@@ -53,7 +50,7 @@ body {
 
     font-family: Monsieur La Doulaise, cursive;
     font-size: 3.9rem; 
-    font-weight: normal; 
+    font-weight: medium; 
     /* text-align: center;  */
     color: #000000; /* Dark color for readability */
 
@@ -77,13 +74,20 @@ body {
 }
 
 .question {
-    font-size: 0.5rem; 
+    font-size: 0.6rem; 
     font-family: Poppins, sans-serif;
+    font-weight: medium;
     text-align: center;
     width: min(90%, 100ch);
     margin-inline: auto;
     margin-top: 1rem;
-    color: #515151; /* Slightly lighter for contrast */
+    color: #000000; /* Slightly lighter for contrast */
+
+    /* Soft White Background */
+    background: rgba(255, 255, 255, 0.652); /* Light white background */
+    padding: 0.7rem; /* Space around text */
+    border-radius: 8px; /* Smooth edges */
+    display: inline-block; /* Wraps around text */
 }
 
 
@@ -92,9 +96,20 @@ body {
 }
 
 h2 {
-    font-family: Monsieur La Doulaise, cursive;
-    font-size: 2rem; 
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: 2.7rem; 
     font-weight: 100;
+    word-spacing: 0.5rem; /* Adjust this value to increase spacing */
+    margin-top: 2rem;  /* Increases space above */
+    margin-bottom: 0.5rem; /* Increases space below */
+    line-height: 1.5; /* Improves readability */
+    text-align: center; /* Centers the heading */
+
+}
+
+/* Make "1.0" larger */
+.chapter-number {
+    font-size: 3rem; /* Increase size */
 }
 
 /* (left section) */
@@ -162,6 +177,7 @@ a.navigation1:hover, a.navigation:hover {
     padding: 40px;
     padding-right: calc(25ch + 20px); 
     flex-grow: 1; /* Make the main content flexible */
+    line-height: 5; /* Improves readability */
 
 
     /* margin-left: calc(20vw + 20px); 
@@ -194,7 +210,7 @@ a.navigation1:hover, a.navigation:hover {
     margin: 0 auto;
     display: grid;
     grid-auto-flow: column;
-    gap: 1rem;
+    gap: 2rem;
     height: 60vh;
     width: 90%;
     text-align: center;
@@ -214,6 +230,187 @@ a.navigation1:hover, a.navigation:hover {
     display: block;
     margin-top: 0.5rem;
     font-size: 0.5rem;
-    color: #333;
+    color: #000000;
     text-align: center;
+    text-shadow: 
+    0px 0px 6px white,   
+    0px 0px 12px white,  
+    0px 0px 20px white,  
+    0px 0px 30px white,  
+    0px 0px 40px white;  /* makes the more intense glow with more power */
+
 }
+
+/*the star you click to go back to the image*/
+.image-anchor {
+    text-decoration: none; 
+    color: rgb(255, 192, 224); 
+    font-size: 0.9rem; /* Keeps original size */
+    vertical-align: middle; /* Keeps it aligned with text */
+    line-height: 1; /* Prevents extra space affecting line height */
+    margin-left: 0.2rem; /* Adds slight spacing after words */
+    position: relative;
+    top: -2px; /* Moves it slightly up to prevent spacing issues */
+}
+
+.popup-trigger {
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.popup {
+    font-size: 12px;
+    visibility: hidden;
+    max-width: 90vw; /* Responsive width (up to 90% of screen width) */
+    width: 220px; /* Default width */
+    background-color: rgb(255, 192, 206);
+    color: black;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    position: absolute;
+    top: 120%; /* Pop-up appears below the word */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: normal; /* Allows text wrapping */
+    word-wrap: break-word; /* Prevents overflow */
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Ensures pop-up stays within screen on small devices */
+@media (max-width: 600px) {
+    .popup {
+        font-size: 8px; /* Smaller text for small screens */
+        max-width: 80vw; /* Slightly reduce max width on small screens */
+    }
+}
+
+/* Hover effect for desktop */
+.popup-trigger:hover .popup {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Click/tap effect for mobile */
+.popup-trigger:focus .popup {
+    visibility: visible;
+    opacity: 1;
+}
+
+.footnote a {
+    text-decoration: none; /* Removes underline */
+    color: rgb(43, 0, 255); /* Makes the number red */
+    font-weight: bold; /* Makes it stand out */
+    font-size: 1em; /* Slightly increases size */
+}
+
+.footnote a:hover {
+    text-shadow: 5px 5px 4px rgba(255, 0, 0, 0.5); /* Adds a subtle glow effect */
+}
+
+.footnotereverse a {
+    text-decoration: none; /* Removes underline */
+    color: rgb(255, 0, 170); /* Makes it red */
+    font-weight: bold; /* Makes it stand out more */
+    font-size: 1em; /* Slightly increases size */
+}
+
+.footnotereverse a:hover {
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.678); /* Adds a subtle glow */
+}
+
+.text_abstract,
+.text_introduction,
+.text_thesis {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    max-width: 90%; /* Prevents the text box from being too wide */
+    width: fit-content; /* Adapts to the text size */
+    margin: 1rem auto; /* Centers the text box */
+}
+
+.text_bibliography {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    max-width: 90%; /* Prevents it from being too wide */
+    width: 100%; /* Ensures it spans the full width */
+    margin: 1rem auto; /* Keeps spacing but removes centering */
+    font-size: 0.6rem; /* Makes the text smaller */
+
+    /* Ensure text wraps properly */
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.footnotes-list {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    max-width: 90%; /* Prevents it from being too wide */
+    width: fit-content; /* Adapts to the text size */
+    margin: 1rem auto; /* Centers the text box */
+    
+    /* Ensure text wraps properly */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    
+    /* Optional: Adjust font size if needed */
+    font-size: 0.6rem; 
+}
+
+/* Improve spacing between each footnote */
+.footnotes-list li {
+    margin-bottom: 0.8rem; /* Adds spacing between footnotes */
+}
+
+
+/* Ensuring ordered list items inside .footnotes-list look clean */
+.footnotes-list li {
+    margin-bottom: 0.8rem; /* Adds spacing between footnotes */
+}
+
+/* information at the end about me */
+.thesis-info {
+    background: rgba(252, 205, 237, 0.598); /* Same translucent white background */
+    padding: 1rem; /* Reduce padding */
+    border-radius: 5px; /* Smaller rounded corners */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    line-height: 1.4; /* Adjust for readability */
+    max-width: 70%; /* Keeps it smaller */
+    width: fit-content; /* Shrinks to fit text */
+    margin: 0.5rem auto; /* Centers and reduces margin */
+    display: flex;
+    flex-direction: column; /* Keeps sections stacked */
+    gap: 0.5rem; /* Smaller spacing between sections */
+}
+
+/* Reduce padding for each section */
+.thesis-info div {
+    padding: 0.3rem 0;
+}
+
+/* Make the font smaller */
+.thesis-info p {
+    margin: 0.2rem 0; /* Less spacing between lines */
+    font-size: 0.7rem; /* Smaller text */
+}
+
+.additional-info p {
+    margin-bottom: 0.5rem; /* Adds small space between paragraphs */
+    line-height: 1.4; /* Improves readability */
+}
+
